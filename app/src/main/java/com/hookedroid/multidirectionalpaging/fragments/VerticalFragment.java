@@ -1,29 +1,25 @@
 package com.hookedroid.multidirectionalpaging.fragments;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.hookedroid.multidirectionalpaging.R;
 import com.hookedroid.multidirectionalpaging.models.VerticalItemModel;
-import com.hookedroid.multidirectionalpaging.provider.VerticalItemObserver;
 
 public class VerticalFragment extends Fragment {
 
-    private VerticalItemObserver mObserver;
+//    private VerticalItemObserver mObserver;
 
     private VerticalItemModel mModel;
 
     private TextView mTitleText;
-    private TextView mDescText;
-    private EditText mDescEditText;
-    private Button mUpdateBtn;
+//    private TextView mDescText;
+//    private EditText mDescEditText;
+//    private Button mUpdateBtn;
 
     public static VerticalFragment newInstance(VerticalItemModel model) {
         VerticalFragment fragment = new VerticalFragment();
@@ -46,7 +42,7 @@ public class VerticalFragment extends Fragment {
             mModel = getArguments().getParcelable("MODEL");
         }
 
-        mObserver = new VerticalItemObserver(new Handler());
+//        mObserver = new VerticalItemObserver(new Handler());
     }
 
     public VerticalFragment() {
