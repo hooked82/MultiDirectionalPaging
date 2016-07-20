@@ -1,12 +1,9 @@
 package com.hookedroid.multidirectionalpaging.provider;
 
 import android.content.ContentProvider;
-import android.content.ContentProviderOperation;
-import android.content.ContentProviderResult;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.OperationApplicationException;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -17,8 +14,6 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
-
-import java.util.ArrayList;
 
 public class PagingProvider extends ContentProvider {
 
@@ -157,16 +152,6 @@ public class PagingProvider extends ContentProvider {
         }
 
         throw new SQLException("Failed to add a record into " + uri);
-    }
-
-    @NonNull
-    @Override
-    public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations) throws OperationApplicationException {
-        for (ContentProviderOperation op : operations) {
-
-        }
-
-        return super.applyBatch(operations);
     }
 
     @Override
