@@ -84,9 +84,9 @@ public class HorizontalFragment extends Fragment implements LoaderManager.Loader
      */
     private void prepLoader(boolean startNew, Bundle args, int loaderId) {
         if (startNew) {
-            getActivity().getSupportLoaderManager().initLoader(loaderId, args, this);
+            getLoaderManager().initLoader(loaderId, args, this);
         } else {
-            getActivity().getSupportLoaderManager().restartLoader(loaderId, args, this);
+            getLoaderManager().restartLoader(loaderId, args, this);
         }
     }
 
