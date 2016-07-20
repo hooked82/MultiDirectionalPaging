@@ -2,7 +2,6 @@ package com.hookedroid.multidirectionalpaging.fragments;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.os.Debug;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
@@ -116,16 +115,11 @@ public class HorizontalFragment extends Fragment implements LoaderManager.Loader
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        Debug.startMethodTracing("horizontalOnLoadFinished");
-
-
         Log.d(TAG, "onLoadFinished");
         mAdapter.closeCursor();
         mAdapter = new VerticalPagerAdapter(getChildFragmentManager(), data);
         mVerticalPager.setAdapter(mAdapter);
         mVerticalPager.setCurrentItem(mSelectedPage);
-
-        Debug.stopMethodTracing();
     }
 
     @Override
